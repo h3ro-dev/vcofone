@@ -1,0 +1,59 @@
+{
+  "pages": {
+    "home": {
+      "title": "Virtual CFO Services for Small Business | vCFO of One",
+      "description": "Get crystal-clear financial visibility without a full-time CFO. AI-driven virtual CFO services for small business owners. Free clarity session available.",
+      "keywords": "virtual CFO, fractional CFO, small business CFO, outsourced CFO services, financial planning, cash flow management",
+      "og:title": "Virtual CFO Services for Small Business | vCFO of One",
+      "og:description": "Transform your business finances with AI-driven virtual CFO services. Real-time insights, cash flow forecasting, and KPI tracking.",
+      "og:image": "/images/og-home.jpg",
+      "og:type": "website",
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Get Financial Clarity Without a Full-Time CFO",
+      "twitter:description": "AI-driven virtual CFO services designed for small business owners. Start with a free financial clarity session.",
+      "canonical": "https://vcfoofone.com/"
+    },
+    "services": {
+      "title": "Virtual CFO Services - Financial Dashboard, KPIs & Cash Flow | vCFO of One",
+      "description": "Comprehensive virtual CFO services including financial dashboards, KPI tracking, cash flow forecasting, and strategic planning for small businesses.",
+      "keywords": "virtual CFO services, financial dashboard, KPI tracking, cash flow forecasting, financial reporting, strategic planning",
+      "og:title": "Virtual CFO Services for Small Business",
+      "og:description": "Get real-time financial insights, custom KPI tracking, and cash flow forecasting with our virtual CFO services.",
+      "canonical": "https://vcfoofone.com/virtual-cfo-services"
+    },
+    "pricing": {
+      "title": "Virtual CFO Pricing - Affordable Plans for Small Business | vCFO of One",
+      "description": "Transparent virtual CFO pricing that scales with your business. No hidden fees, no long-term contracts. Start with a free financial clarity session.",
+      "keywords": "virtual CFO pricing, fractional CFO cost, affordable CFO services, small business CFO pricing",
+      "og:title": "Affordable Virtual CFO Pricing for Small Business",
+      "og:description": "Virtual CFO services starting at a fraction of full-time CFO cost. Flexible plans that grow with your business.",
+      "canonical": "https://vcfoofone.com/pricing"
+    },
+    "free-session": {
+      "title": "Free Financial Clarity Session - Virtual CFO Consultation | vCFO of One",
+      "description": "Book your free 30-minute financial clarity session. Discover how virtual CFO services can transform your business finances. No obligation.",
+      "keywords": "free CFO consultation, financial clarity session, virtual CFO assessment, small business financial review",
+      "og:title": "Get Your Free Financial Clarity Session",
+      "og:description": "30-minute consultation to assess your financial needs and show how virtual CFO services can help your business grow.",
+      "canonical": "https://vcfoofone.com/free-financial-clarity-session"
+    },
+    "blog": {
+      "title": "Virtual CFO Blog - Financial Insights for Small Business | vCFO of One",
+      "description": "Expert financial insights, tips, and strategies for small business owners. Learn about cash flow management, KPIs, and financial planning.",
+      "keywords": "small business finance blog, CFO insights, financial planning tips, cash flow management",
+      "og:title": "Virtual CFO Blog - Financial Insights for Small Business",
+      "og:description": "Expert advice on financial management, KPI tracking, and strategic planning for small business success.",
+      "canonical": "https://vcfoofone.com/blog"
+    }
+  },
+  "defaults": {
+    "author": "vCFO of One",
+    "robots": "index, follow",
+    "viewport": "width=device-width, initial-scale=1",
+    "theme-color": "#4169E1",
+    "og:site_name": "vCFO of One",
+    "og:locale": "en_US",
+    "twitter:site": "@vcfoofone",
+    "twitter:creator": "@vcfoofone"
+  }
+}
