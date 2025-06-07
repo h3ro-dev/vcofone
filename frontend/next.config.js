@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+<<<<<<< HEAD
   // Enable React strict mode for better error detection
   reactStrictMode: true,
 
@@ -152,3 +153,10 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+=======
+  reactStrictMode: true,
+  swcMinify: true,
+}
+
+module.exports = nextConfig
+>>>>>>> origin/main
