@@ -1,0 +1,73 @@
+{
+  "baseUrl": "https://vcfoofone.com",
+  "pages": [
+    {
+      "url": "/",
+      "changefreq": "weekly",
+      "priority": 1.0,
+      "lastmod": "2024-01-01"
+    },
+    {
+      "url": "/virtual-cfo-services",
+      "changefreq": "monthly",
+      "priority": 0.9,
+      "lastmod": "2024-01-01"
+    },
+    {
+      "url": "/pricing",
+      "changefreq": "monthly",
+      "priority": 0.8,
+      "lastmod": "2024-01-01"
+    },
+    {
+      "url": "/free-financial-clarity-session",
+      "changefreq": "monthly",
+      "priority": 0.9,
+      "lastmod": "2024-01-01"
+    },
+    {
+      "url": "/resources",
+      "changefreq": "weekly",
+      "priority": 0.7,
+      "lastmod": "2024-01-01"
+    },
+    {
+      "url": "/blog",
+      "changefreq": "daily",
+      "priority": 0.8,
+      "lastmod": "2024-01-01"
+    },
+    {
+      "url": "/about",
+      "changefreq": "monthly",
+      "priority": 0.6,
+      "lastmod": "2024-01-01"
+    },
+    {
+      "url": "/contact",
+      "changefreq": "yearly",
+      "priority": 0.5,
+      "lastmod": "2024-01-01"
+    },
+    {
+      "url": "/privacy-policy",
+      "changefreq": "yearly",
+      "priority": 0.3,
+      "lastmod": "2024-01-01"
+    },
+    {
+      "url": "/terms-of-service",
+      "changefreq": "yearly",
+      "priority": 0.3,
+      "lastmod": "2024-01-01"
+    }
+  ],
+  "dynamicRoutes": {
+    "blog": {
+      "pattern": "/blog/[slug]",
+      "changefreq": "monthly",
+      "priority": 0.7,
+      "source": "api/blog/posts"
+    }
+  }
+}

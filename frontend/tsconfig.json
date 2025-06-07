@@ -9,7 +9,11 @@
     "noEmit": true,
     "esModuleInterop": true,
     "module": "esnext",
+<<<<<<< HEAD
     "moduleResolution": "bundler",
+=======
+    "moduleResolution": "node",
+>>>>>>> origin/main
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
@@ -20,12 +24,16 @@
       }
     ],
     "paths": {
+<<<<<<< HEAD
       "@/*": ["./src/*"],
       "@/components/*": ["./src/components/*"],
       "@/lib/*": ["./src/lib/*"],
       "@/hooks/*": ["./src/hooks/*"],
       "@/types/*": ["./src/types/*"],
       "@/styles/*": ["./src/styles/*"]
+=======
+      "@/*": ["./src/*"]
+>>>>>>> origin/main
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

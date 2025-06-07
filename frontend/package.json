@@ -1,13 +1,18 @@
 {
   "name": "vcofone-frontend",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "Frontend for vCFO of One",
+=======
+  "description": "Virtual CFO for solo businesses - Frontend",
+>>>>>>> origin/main
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
+<<<<<<< HEAD
   "dependencies": {
     "next": "^13.5.0",
     "react": "^18.2.0",
@@ -40,3 +45,20 @@
     "typescript": "^5.2.2"
   }
 }
+=======
+  "keywords": ["vcfo", "landing-page", "conversion"],
+  "author": "Utlyze",
+  "license": "MIT",
+  "dependencies": {
+    "@next/third-parties": "^14.2.20",
+    "@types/node": "^22.10.1",
+    "@types/react": "^19.0.1",
+    "@types/react-dom": "^19.0.1",
+    "next": "^15.0.3",
+    "posthog-js": "^1.198.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.2"
+  }
+}
+>>>>>>> origin/main

@@ -2,6 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+<<<<<<< HEAD
   images: {
     domains: ['localhost'],
     formats: ['image/avif', 'image/webp'],
@@ -38,3 +39,8 @@ const nextConfig = {
 };
 
 module.exports = nextConfig;
+=======
+}
+
+module.exports = nextConfig
+>>>>>>> origin/main
