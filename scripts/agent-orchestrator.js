@@ -87,6 +87,47 @@ const TASK_REGISTRY = {
     completionCheck: () => fs.existsSync('backend/src/api/server.ts')
   },
 
+  // Animation Tasks
+  'animation-system': {
+    id: 'animation-system',
+    name: 'Create Animation System',
+    dependencies: ['design-system'],
+    estimatedHours: 3,
+    priority: 'HIGH',
+    prompt: `Create a comprehensive animation system for ${SITE_CONFIG.name}. Include: 1) Framer Motion setup and configuration, 2) Reusable animation variants (fade, slide, scale, etc.), 3) Custom hooks for animations (useScrollAnimation, useHoverAnimation), 4) Animation utilities and helpers. Use smooth, professional animations that enhance UX without being distracting. Consider accessibility with prefers-reduced-motion.`,
+    completionCheck: () => fs.existsSync('frontend/src/utils/animations.ts')
+  },
+
+  'component-animations': {
+    id: 'component-animations',
+    name: 'Add Component Animations',
+    dependencies: ['component-library', 'animation-system'],
+    estimatedHours: 2,
+    priority: 'MEDIUM',
+    prompt: `Add animations to all UI components. Include: hover effects, click feedback, loading states, entrance animations. Keep animations subtle and professional for ${SITE_CONFIG.targetAudience}.`,
+    completionCheck: () => fs.existsSync('frontend/src/components/ui/AnimatedButton.tsx')
+  },
+
+  'page-transitions': {
+    id: 'page-transitions',
+    name: 'Implement Page Transitions',
+    dependencies: ['landing-page', 'animation-system'],
+    estimatedHours: 2,
+    priority: 'MEDIUM',
+    prompt: `Implement smooth page transitions and scroll-triggered animations for the landing page. Include: hero section fade-in, feature cards stagger animation, testimonial carousel, CTA pulse effects, smooth scroll behavior. All animations should enhance the professional feel.`,
+    completionCheck: () => fs.existsSync('frontend/src/components/PageTransition.tsx')
+  },
+
+  'micro-interactions': {
+    id: 'micro-interactions',
+    name: 'Add Micro-interactions',
+    dependencies: ['component-animations'],
+    estimatedHours: 1,
+    priority: 'LOW',
+    prompt: `Add subtle micro-interactions throughout the site: form field focus effects, button ripples, tooltip animations, success/error state transitions, loading spinners. Focus on details that make the site feel polished and responsive.`,
+    completionCheck: () => fs.existsSync('frontend/src/components/ui/MicroInteractions.tsx')
+  },
+
   // Add more tasks as needed...
 };
 
