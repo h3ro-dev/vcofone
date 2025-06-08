@@ -76,6 +76,16 @@ const TASK_REGISTRY = {
     completionCheck: () => fs.existsSync('frontend/src/app/page.tsx')
   },
 
+  'dashboard-preview': {
+    id: 'dashboard-preview',
+    name: 'Create Dashboard Preview',
+    dependencies: ['nextjs-setup'],
+    estimatedHours: 3,
+    priority: 'HIGH',
+    prompt: 'Create a beautiful, functional dashboard preview for vCFO of One showing key financial metrics, charts, AI insights, and quick actions.',
+    completionCheck: () => fs.existsSync('frontend/src/app/dashboard/page.tsx')
+  },
+
   // Backend Tasks
   'api-setup': {
     id: 'api-setup',
