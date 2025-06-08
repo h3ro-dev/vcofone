@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import '../styles/globals.css'
+
+const inter = Inter({ subsets: ['latin'] })
+=======
 import React from 'react';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
@@ -5,10 +12,14 @@ import { AnalyticsProvider } from '@/lib/analytics';
 import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] });
+>>>>>>> origin/main
 
 export const metadata: Metadata = {
   title: 'vCFO of One - Virtual CFO for Solo Businesses',
   description: 'Get Crystal-Clear Financial Visibility Without a Full-Time CFO. AI-driven virtual CFO providing financial insight and oversight on demand.',
+<<<<<<< HEAD
+}
+=======
   keywords: 'virtual cfo, financial management, small business, financial clarity, cash flow management',
   openGraph: {
     title: 'vCFO of One - Virtual CFO for Solo Businesses',
@@ -31,19 +42,31 @@ export const metadata: Metadata = {
     images: ['/twitter-image.png'],
   },
 };
+>>>>>>> origin/main
 
 export default function RootLayout({
   children,
 }: {
+<<<<<<< HEAD
+  children: React.ReactNode
+=======
   children: React.ReactNode;
+>>>>>>> origin/main
 }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+<<<<<<< HEAD
+        {children}
+      </body>
+    </html>
+  )
+=======
         <AnalyticsProvider>
           {children}
         </AnalyticsProvider>
       </body>
     </html>
   );
+>>>>>>> origin/main
 }
