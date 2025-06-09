@@ -16,7 +16,10 @@
     "test": "jest",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx",
     "test:performance": "node scripts/performance-test.js",
-    "analyze": "cd frontend && npm run build && npm run analyze"
+    "analyze": "cd frontend && npm run build && npm run analyze",
+    "deploy": "node scripts/deploy-to-vercel.js",
+    "setup-dns": "node scripts/godaddy-dns-automation.js",
+    "deploy-full": "npm run setup-dns && npm run deploy"
   },
   "keywords": [
     "vcfo",

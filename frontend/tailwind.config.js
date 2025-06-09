@@ -9,28 +9,28 @@ module.exports = {
     extend: {
       colors: {
         primary: {
-          50: '#eff6ff',
-          100: '#dbeafe',
-          200: '#bfdbfe',
-          300: '#93bbfd',
-          400: '#4169E1', // Utlyze Blue
-          500: '#3b5fc8',
-          600: '#2d4aa0',
-          700: '#253c82',
-          800: '#1e2e63',
-          900: '#1a2852',
+          50: '#e6effc',
+          100: '#c2d5f7',
+          200: '#9ab9f2',
+          300: '#729ded',
+          400: '#5586ea',
+          500: '#4169E1', // Utlyze Blue - Main brand color
+          600: '#3659d4',
+          700: '#2a47c6',
+          800: '#1e35b8',
+          900: '#1427a7',
         },
         accent: {
-          50: '#f0fdf8',
-          100: '#ccfbec',
-          200: '#99f6d9',
-          300: '#5de9bf',
-          400: '#00A878', // Accent Color
-          500: '#00976b',
-          600: '#008259',
-          700: '#006b4a',
-          800: '#00563b',
-          900: '#004732',
+          50: '#e6f7f2',
+          100: '#c0ebde',
+          200: '#96ddc8',
+          300: '#6ccfb2',
+          400: '#4dc5a1',
+          500: '#00A878', // Financial Success Green - Main accent
+          600: '#008d6a',
+          700: '#007359',
+          800: '#005948',
+          900: '#00453a',
         },
         gray: {
           50: '#f9fafb',
@@ -98,6 +98,8 @@ module.exports = {
         'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'slide-down': 'slideDown 0.3s ease-out',
+        'bounce': 'bounce 1s infinite',
+        'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
       },
       keyframes: {
         fadeIn: {
@@ -112,6 +114,17 @@ module.exports = {
           '0%': { transform: 'translateY(-10px)', opacity: '0' },
           '100%': { transform: 'translateY(0)', opacity: '1' },
         },
+      },
+      animationDelay: {
+        75: '75ms',
+        100: '100ms',
+        150: '150ms',
+        200: '200ms',
+        300: '300ms',
+        400: '400ms',
+        500: '500ms',
+        700: '700ms',
+        1000: '1000ms',
       },
     },
   },

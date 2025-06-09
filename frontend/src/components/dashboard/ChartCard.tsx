@@ -6,7 +6,7 @@ interface ChartCardProps {
   children: React.ReactNode
 }
 
-export default function ChartCard({ title, subtitle, children }: ChartCardProps) {
+export function ChartCard({ title, subtitle, children }: ChartCardProps) {
   return (
     <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
       <div className="mb-4">

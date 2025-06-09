@@ -138,6 +138,7 @@ export const Button: React.FC<ButtonProps> = ({
     borderRadius: borderRadius.lg,
     cursor: disabled || loading ? 'not-allowed' : 'pointer',
     transition: 'all 150ms ease-in-out',
+    boxShadow: variant === 'primary' || variant === 'accent' ? shadows.sm : 'none',
     outline: 'none',
     width: fullWidth ? '100%' : 'auto',
     position: 'relative',

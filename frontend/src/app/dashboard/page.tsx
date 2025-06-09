@@ -1,172 +1,168 @@
-'use client'
+'use client';
 
-import React from 'react'
-import MetricCard from '@/components/dashboard/MetricCard'
-import ChartCard from '@/components/dashboard/ChartCard'
-import SimpleBarChart from '@/components/dashboard/SimpleBarChart'
+import React from 'react';
+import { Container, Card } from '@/components/ui';
+import { MetricCard } from '@/components/dashboard/MetricCard';
+import { ChartCard } from '@/components/dashboard/ChartCard';
+import { SimpleBarChart } from '@/components/dashboard/SimpleBarChart';
+import { colors } from '@/styles/design-system';
 
-// Icons as simple SVG components
-const DollarIcon = () => (
-  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-  </svg>
-)
+export default function DashboardPreview() {
+  // Demo data
+  const cashFlowData = [
+    { month: 'Jan', inflow: 45000, outflow: 38000 },
+    { month: 'Feb', inflow: 52000, outflow: 41000 },
+    { month: 'Mar', inflow: 48000, outflow: 43000 },
+    { month: 'Apr', inflow: 61000, outflow: 45000 },
+    { month: 'May', inflow: 58000, outflow: 47000 },
+    { month: 'Jun', inflow: 67000, outflow: 52000 },
+  ];
 
-const TrendingUpIcon = () => (
-  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-  </svg>
-)
-
-const UsersIcon = () => (
-  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z" />
-  </svg>
-)
-
-const ChartIcon = () => (
-  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-  </svg>
-)
-
-export default function DashboardPage() {
-  // Sample data for the dashboard
   const revenueData = [
-    { label: 'Jan', value: 45000 },
-    { label: 'Feb', value: 52000 },
-    { label: 'Mar', value: 48000 },
-    { label: 'Apr', value: 61000 },
-    { label: 'May', value: 55000 },
-    { label: 'Jun', value: 67000 },
-  ]
+    { month: 'Jan', revenue: 45000 },
+    { month: 'Feb', revenue: 52000 },
+    { month: 'Mar', revenue: 48000 },
+    { month: 'Apr', revenue: 61000 },
+    { month: 'May', revenue: 58000 },
+    { month: 'Jun', revenue: 67000 },
+  ];
 
-  const expenseData = [
-    { label: 'Marketing', value: 12000, color: '#4169E1' },
-    { label: 'Operations', value: 28000, color: '#00A878' },
-    { label: 'Salaries', value: 45000, color: '#6B7280' },
-    { label: 'Other', value: 8000, color: '#F59E0B' },
-  ]
+  const expenseBreakdown = [
+    { category: 'Payroll', amount: 28000, percentage: 45 },
+    { category: 'Marketing', amount: 12000, percentage: 19 },
+    { category: 'Operations', amount: 8000, percentage: 13 },
+    { category: 'Rent & Utilities', amount: 7000, percentage: 11 },
+    { category: 'Other', amount: 7000, percentage: 12 },
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <main className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-white shadow-sm border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-between">
+      <section className="bg-white border-b border-gray-200 py-6">
+        <Container>
+          <div className="flex justify-between items-center">
             <div>
-              <h1 className="text-2xl font-semibold text-gray-900">vCFO Dashboard</h1>
-              <p className="text-sm text-gray-600 mt-1">Financial Overview & Insights</p>
+              <h1 className="text-3xl font-bold text-gray-900">Financial Dashboard</h1>
+              <p className="text-gray-600 mt-1">Real-time insights for your business</p>
             </div>
-            <div className="flex items-center gap-4">
-              <button className="px-4 py-2 text-sm font-medium text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50">
-                Export Report
-              </button>
-              <button className="px-4 py-2 text-sm font-medium text-white bg-[#4169E1] rounded-lg hover:bg-[#3455C8]">
-                Schedule Consultation
-              </button>
+            <div className="text-sm text-gray-500">
+              <span className="font-medium">Demo Mode</span> • Last updated: Just now
             </div>
           </div>
-        </div>
-      </header>
+        </Container>
+      </section>
 
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Key Metrics */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-          <MetricCard
-            title="Monthly Revenue"
-            value={67000}
-            change={22}
-            trend="up"
-            icon={<DollarIcon />}
-            prefix="$"
-          />
-          <MetricCard
-            title="Net Profit Margin"
-            value="24.3%"
-            change={3.2}
-            trend="up"
-            icon={<TrendingUpIcon />}
-          />
-          <MetricCard
-            title="Active Clients"
-            value={148}
-            change={-5}
-            trend="down"
-            icon={<UsersIcon />}
-          />
-          <MetricCard
-            title="Cash Flow"
-            value={125000}
-            change={15}
-            trend="up"
-            icon={<ChartIcon />}
-            prefix="$"
-          />
-        </div>
-
-        {/* Charts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-          <ChartCard 
-            title="Revenue Trend" 
-            subtitle="Last 6 months performance"
-          >
-            <SimpleBarChart data={revenueData} />
-          </ChartCard>
-          
-          <ChartCard 
-            title="Expense Breakdown" 
-            subtitle="Current month distribution"
-          >
-            <SimpleBarChart data={expenseData} />
-          </ChartCard>
-        </div>
-
-        {/* Insights Section */}
-        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
-          <h3 className="text-lg font-semibold text-gray-900 mb-4">AI-Powered Insights</h3>
-          <div className="space-y-4">
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-green-500 rounded-full mt-2"></div>
-              <div>
-                <p className="text-sm font-medium text-gray-900">Strong Revenue Growth</p>
-                <p className="text-sm text-gray-600">Your revenue has increased by 22% compared to last month. This growth is primarily driven by new client acquisitions.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-yellow-500 rounded-full mt-2"></div>
-              <div>
-                <p className="text-sm font-medium text-gray-900">Optimize Marketing Spend</p>
-                <p className="text-sm text-gray-600">Marketing expenses are 15% higher than industry average. Consider reallocating budget to channels with higher ROI.</p>
-              </div>
-            </div>
-            <div className="flex items-start gap-3">
-              <div className="w-2 h-2 bg-blue-500 rounded-full mt-2"></div>
-              <div>
-                <p className="text-sm font-medium text-gray-900">Cash Flow Forecast</p>
-                <p className="text-sm text-gray-600">Based on current trends, you'll have sufficient cash flow for the next 6 months with a 20% buffer for unexpected expenses.</p>
-              </div>
-            </div>
+      {/* KPI Cards */}
+      <section className="py-8">
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <MetricCard
+              title="Cash on Hand"
+              value="$127,450"
+              change="+12.5%"
+              trend="up"
+              icon="💰"
+            />
+            <MetricCard
+              title="Monthly Revenue"
+              value="$67,000"
+              change="+15.5%"
+              trend="up"
+              icon="📈"
+            />
+            <MetricCard
+              title="Burn Rate"
+              value="$52,000"
+              change="-8.2%"
+              trend="down"
+              icon="🔥"
+            />
+            <MetricCard
+              title="Runway"
+              value="2.4 months"
+              change="+0.3"
+              trend="up"
+              icon="🚀"
+            />
           </div>
-        </div>
+        </Container>
+      </section>
 
-        {/* Quick Actions */}
-        <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
-          <button className="p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow text-left">
-            <h4 className="font-medium text-gray-900">Generate P&L Report</h4>
-            <p className="text-sm text-gray-600 mt-1">Create detailed profit & loss statement</p>
-          </button>
-          <button className="p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow text-left">
-            <h4 className="font-medium text-gray-900">Cash Flow Analysis</h4>
-            <p className="text-sm text-gray-600 mt-1">Deep dive into cash flow patterns</p>
-          </button>
-          <button className="p-4 bg-white rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow text-left">
-            <h4 className="font-medium text-gray-900">ROI Calculator</h4>
-            <p className="text-sm text-gray-600 mt-1">Calculate ROI for your initiatives</p>
-          </button>
-        </div>
-      </main>
-    </div>
-  )
+      {/* Charts Section */}
+      <section className="py-8">
+        <Container>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Cash Flow Chart */}
+            <ChartCard title="Cash Flow Analysis" subtitle="Inflow vs Outflow">
+              <SimpleBarChart
+                data={cashFlowData}
+                dataKeys={['inflow', 'outflow']}
+                colors={[colors.accent[500], colors.primary[500]]}
+              />
+            </ChartCard>
+
+            {/* Revenue Trend Chart */}
+            <ChartCard title="Revenue Trend" subtitle="6-Month Overview">
+              <SimpleBarChart
+                data={revenueData}
+                dataKeys={['revenue']}
+                colors={[colors.primary[500]]}
+              />
+            </ChartCard>
+          </div>
+        </Container>
+      </section>
+
+      {/* Expense Breakdown */}
+      <section className="py-8">
+        <Container>
+          <Card>
+            <h2 className="text-xl font-semibold text-gray-900 mb-6">Expense Breakdown</h2>
+            <div className="space-y-4">
+              {expenseBreakdown.map((expense, index) => (
+                <div key={index} className="flex items-center justify-between">
+                  <div className="flex items-center gap-4">
+                    <div className="w-2 h-8 rounded-full" style={{ backgroundColor: colors.primary[500 - index * 100] }} />
+                    <div>
+                      <p className="font-medium text-gray-900">{expense.category}</p>
+                      <p className="text-sm text-gray-500">{expense.percentage}% of total</p>
+                    </div>
+                  </div>
+                  <p className="font-semibold text-gray-900">${expense.amount.toLocaleString()}</p>
+                </div>
+              ))}
+            </div>
+          </Card>
+        </Container>
+      </section>
+
+      {/* AI Insights */}
+      <section className="py-8 pb-16">
+        <Container>
+          <Card className="bg-gradient-to-br from-primary-50 to-accent-50 border-0">
+            <div className="flex items-start gap-4">
+              <div className="text-3xl">🤖</div>
+              <div>
+                <h2 className="text-xl font-semibold text-gray-900 mb-2">AI Insights</h2>
+                <ul className="space-y-2 text-gray-700">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-500 mt-1">•</span>
+                    <span>Your cash flow is improving. Revenue increased 15.5% while expenses only grew 8.3%.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-yellow-500 mt-1">•</span>
+                    <span>Marketing spend is yielding 3.2x ROI. Consider increasing budget by 20%.</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-red-500 mt-1">•</span>
+                    <span>Runway alert: At current burn rate, you have 2.4 months of runway. Consider fundraising or reducing expenses.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </Card>
+        </Container>
+      </section>
+    </main>
+  );
 }

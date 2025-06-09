@@ -9,7 +9,7 @@ interface MetricCardProps {
   prefix?: string
 }
 
-export default function MetricCard({ 
+export function MetricCard({ 
   title, 
   value, 
   change, 

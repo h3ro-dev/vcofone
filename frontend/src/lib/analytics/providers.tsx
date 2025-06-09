@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import posthog from 'posthog-js';
 import { PostHogProvider } from 'posthog-js/react';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 
 // Initialize Posthog
 if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
@@ -17,7 +17,6 @@ if (typeof window !== 'undefined' && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
 
 export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
 
   // Track page views
   useEffect(() => {
@@ -32,7 +31,7 @@ export function AnalyticsProvider({ children }: { children: React.ReactNode }) {
 
       // Google Analytics page view (handled by GoogleAnalytics component)
     }
-  }, [pathname, searchParams]);
+  }, [pathname]);
 
   return (
     <>

@@ -1,0 +1,20 @@
+
+=== COPY-PASTE READY DNS RECORDS ===
+
+A RECORD:
+Type: A
+Name: @
+Value: 76.76.19.61
+TTL: 600
+
+CNAME RECORD:
+Type: CNAME
+Name: www
+Value: vcofone.ai
+TTL: 600
+
+=== INSTRUCTIONS ===
+1. Delete any existing A or CNAME records for @ and www
+2. Add the records above exactly as shown
+3. Save changes and wait 5-15 minutes
+4. Test: https://vcofone.ai

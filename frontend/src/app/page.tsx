@@ -16,6 +16,28 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-gray-50">
+      {/* Navigation Header */}
+      <header className="bg-white shadow-sm sticky top-0 z-40">
+        <Container>
+          <nav className="flex justify-between items-center py-4">
+            <div className="flex items-center gap-2">
+              <div className="text-2xl font-bold text-primary-500">vCFO</div>
+              <div className="text-sm text-gray-600 mt-1">of One</div>
+            </div>
+            <div className="hidden md:flex items-center gap-8">
+              <a href="#features" className="text-gray-700 hover:text-primary-500 transition-colors">Features</a>
+              <a href="#pricing" className="text-gray-700 hover:text-primary-500 transition-colors">Pricing</a>
+              <a href="/dashboard" className="text-gray-700 hover:text-primary-500 transition-colors">Demo</a>
+              <Button 
+                size="sm" 
+                onClick={() => setShowConsultationModal(true)}
+              >
+                Get Started
+              </Button>
+            </div>
+          </nav>
+        </Container>
+      </header>
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-primary-50 via-white to-accent-50 py-20 md:py-32">
         <Container>
@@ -37,9 +59,9 @@ export default function Home() {
               <Button 
                 size="lg" 
                 variant="secondary"
-                onClick={() => document.getElementById('how-it-works')?.scrollIntoView({ behavior: 'smooth' })}
+                onClick={() => window.location.href = '/dashboard'}
               >
-                See How It Works
+                View Demo Dashboard
               </Button>
             </div>
           </div>
@@ -75,7 +97,7 @@ export default function Home() {
                 description: "You know metrics matter, but which ones? Without the right dashboard, you're making decisions based on gut feel instead of data."
               }
             ].map((pain, index) => (
-              <Card key={index} variant="bordered" className="hover:shadow-lg transition-shadow">
+              <Card key={index} variant="bordered" className="hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {pain.title}
                 </h3>
@@ -89,7 +111,7 @@ export default function Home() {
       </section>
 
       {/* Solution Section */}
-      <section className="py-20 bg-gray-50">
+      <section id="features" className="py-20 bg-gray-50">
         <Container>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
             Your AI-Powered Virtual CFO
@@ -122,7 +144,7 @@ export default function Home() {
                 icon: "💡"
               }
             ].map((feature, index) => (
-              <Card key={index} variant="elevated">
+              <Card key={index} variant="elevated" className="hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="text-4xl mb-4">{feature.icon}</div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {feature.title}
@@ -219,7 +241,7 @@ export default function Home() {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-20 bg-white">
+      <section id="pricing" className="py-20 bg-white">
         <Container>
           <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
             Simple, Transparent Pricing
@@ -273,7 +295,7 @@ export default function Home() {
               <Card 
                 key={index} 
                 variant={plan.popular ? "elevated" : "bordered"}
-                className={plan.popular ? "border-2 border-primary-500" : ""}
+                className={`${plan.popular ? "border-2 border-primary-500 bg-gradient-to-br from-primary-50 to-white" : ""} hover:shadow-lg transition-all duration-300`}
               >
                 {plan.popular && (
                   <div className="bg-primary-500 text-white text-sm font-semibold px-4 py-1 rounded-full mb-4 inline-block">
@@ -349,10 +371,10 @@ export default function Home() {
         </Container>
       </footer>
 
-      {/* Consultation Modal - Placeholder */}
+      {/* Consultation Modal */}
       {showConsultationModal && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <Card className="max-w-md w-full">
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50 animate-fade-in">
+          <Card className="max-w-md w-full animate-slide-up shadow-2xl">
             <h3 className="text-2xl font-bold mb-4">Book Your Free Clarity Session</h3>
             <p className="text-gray-600 mb-6">
               Fill out the form below and we'll contact you within 24 hours to schedule your session.
