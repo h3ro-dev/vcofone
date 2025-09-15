@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import { notifyLead, utmFromLocation } from '@/lib/notifyLead';
 import { Button, Card, Input, Container } from '@/components/ui';
 import { colors, typography, spacing } from '@/styles/design-system';
 
@@ -12,6 +13,14 @@ export default function Home() {
     e.preventDefault();
     // TODO: Submit to API
     console.log('Email submitted:', email);
+    // Fire-and-forget Slack notifier for consultation interest
+    try {
+      const page_url = typeof window !== 'undefined' ? window.location.href : '';
+      const payload = { email, page_url, ...utmFromLocation() };
+      notifyLead('consultation', payload);
+    } catch (e) {
+      console.warn('notifyLead skipped', e);
+    }
   };
 
   return (
