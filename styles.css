@@ -361,6 +361,58 @@ main {
   color: var(--muted);
 }
 
+.pulse-insight {
+  grid-column: 1 / -1;
+  background: rgba(12, 14, 20, 0.7);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 18px 20px;
+}
+
+.pulse-title {
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 11px;
+  color: var(--teal);
+}
+
+.pulse-sub {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 8px 0 14px;
+}
+
+.pulse-timeline {
+  display: grid;
+  gap: 10px;
+}
+
+.pulse-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  padding-bottom: 8px;
+}
+
+.pulse-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.pulse-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: rgba(245, 239, 231, 0.75);
+}
+
+.pulse-value {
+  font-size: 12px;
+  color: var(--ivory);
+  text-align: right;
+}
+
 .scorecard-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
