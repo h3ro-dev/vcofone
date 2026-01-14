@@ -1,0 +1,28 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "quote": "We went from spending 6 hours assembling IC packets to having decision-ready drafts in under 20 minutes. The conviction engine surfaces exactly what we need to move deals forward.",
+      "name": "Sarah Chen",
+      "title": "General Partner",
+      "firm": "Horizon Ventures",
+      "focus": "Time to IC reduced by 90%"
+    },
+    {
+      "id": 2,
+      "quote": "The evidence ledger changed how we think about diligence. Every customer quote, expert call, and proof point is logged with provenance. When partners ask 'why this deal,' the trail is already there.",
+      "name": "Marcus Rivera",
+      "title": "Principal",
+      "firm": "Scale Capital",
+      "focus": "Audit-ready from day one"
+    },
+    {
+      "id": 3,
+      "quote": "LP reporting used to be a quarterly scramble. Now conviction scores and deal activity flow directly into our fund dashboards. The team actually trusts the data because it's traceable.",
+      "name": "Elena Kowalski",
+      "title": "Head of Fund Operations",
+      "firm": "Foundation Partners",
+      "focus": "LP-ready reporting on demand"
+    }
+  ]
+}

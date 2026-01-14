@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 60" fill="#f5efe7">
+  <circle cx="40" cy="30" r="18" fill="none" stroke="#f5efe7" stroke-width="2" opacity="0.8"/>
+  <circle cx="40" cy="30" r="6"/>
+  <text x="125" y="38" font-family="system-ui, -apple-system, sans-serif" font-size="15" font-weight="600" text-anchor="middle" letter-spacing="0.08em">PRIME</text>
+</svg>
